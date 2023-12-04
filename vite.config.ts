@@ -36,6 +36,12 @@ export default defineApplicationConfig({
           ws: true,
           rewrite: (path) => path.replace(new RegExp(`^/mms-api`), ''),
         },
+        '/pay': {
+          target: 'http://localhost:9107/pay',
+          changeOrigin: true,
+          ws: true,
+          rewrite: (path) => path.replace(new RegExp(`^/pay`), ''),
+        },
       },
     },
   },
