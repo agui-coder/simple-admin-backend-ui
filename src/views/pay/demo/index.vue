@@ -40,7 +40,7 @@
       /** 支付按钮操作 */
       function handlePay(record: Recordable) {
         go(
-          `/pay/cashier?id=${record.payOrderId}&&returnUrl=${encodeURIComponent(
+          `/cashier?id=${record.payOrderId}&&returnUrl=${encodeURIComponent(
             `/pay/demo-order?id=${record.id}`,
           )}`,
         );
@@ -53,7 +53,7 @@
           iconType: 'warning',
           content: `是否确认退款编号为"${record.id}"的示例订单?`,
           async onOk() {
-            await refundDemoOrder(record.id);
+            await refundDemoOrder({id:record.id});
             createMessage.success(t('common.successText'));
             reload();
           },

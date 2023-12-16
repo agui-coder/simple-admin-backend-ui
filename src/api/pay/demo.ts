@@ -1,5 +1,5 @@
 import { defHttp } from '@/utils/http/axios';
-import { BaseDataResp, BaseListReq } from '/@/api/model/baseModel';
+import { BaseDataResp, BaseIDReq, BaseListReq, BaseResp } from '/@/api/model/baseModel';
 import { DemoOrderListResp, DemoOrderInfo, createDemoOrderReq } from '/@/api/pay/model/demoModel';
 import { ErrorMessageMode } from '/#/axios';
 
@@ -37,6 +37,6 @@ export function createDemoOrder(data) {
 }
 
 // 退款示例订单
-export function refundDemoOrder(id: number) {
-  return defHttp.put({ url: `/pay/demo-order/refund?id=${id}` });
+export function refundDemoOrder(params: BaseIDReq, mode: ErrorMessageMode = 'notice') {
+  return defHttp.post<BaseResp>({ url: `/pay/demo-order/refund`, params }, { errorMessageMode: mode });
 }
