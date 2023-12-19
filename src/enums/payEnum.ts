@@ -79,15 +79,15 @@ export const PayType = {
  */
 export const PayOrderStatusEnum = {
   WAITING: {
-    status: 10,
+    status: 1,
     name: '未支付',
   },
   SUCCESS: {
-    status: 20,
+    status: 2,
     name: '已支付',
   },
   CLOSED: {
-    status: 30,
+    status: 3,
     name: '未支付',
   },
 };

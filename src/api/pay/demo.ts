@@ -4,8 +4,8 @@ import { DemoOrderListResp, DemoOrderInfo, createDemoOrderReq } from '/@/api/pay
 import { ErrorMessageMode } from '/#/axios';
 
 enum Api {
-  GetDemoOrderList = '/pay/demo-order/page',
-  GetDemoOrder = '/pay/demo-order/get',
+  GetDemoOrderList = '/pay-api/demo-order/page',
+  GetDemoOrder = '/pay-api/demo-order/get',
 }
 
 /**
@@ -33,10 +33,10 @@ export const getDemoOrder = (params: createDemoOrderReq, mode: ErrorMessageMode 
 
 // 创建示例订单
 export function createDemoOrder(data) {
-  return defHttp.post({ url: '/pay/demo-order/create', data });
+  return defHttp.post({ url: '/pay-api/demo-order/create', data });
 }
 
 // 退款示例订单
 export function refundDemoOrder(params: BaseIDReq, mode: ErrorMessageMode = 'notice') {
-  return defHttp.post<BaseResp>({ url: `/pay/demo-order/refund`, params }, { errorMessageMode: mode });
+  return defHttp.post<BaseResp>({ url: `/pay-api/demo-order/refund`, params }, { errorMessageMode: mode });
 }

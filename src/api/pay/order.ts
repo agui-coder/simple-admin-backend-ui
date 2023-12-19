@@ -4,8 +4,8 @@ import { ErrorMessageMode } from '/#/axios';
 import { defHttp } from '/@/utils/http/axios';
 
 enum Api {
-  GetOrder = '/pay/order/get',
-  SubmitOrder = '/pay/order/submit',
+  GetOrder = '/pay-api/order/get',
+  SubmitOrder = '/pay-api/order/submit',
 }
 /**
  *  @description: Get Order By ID
